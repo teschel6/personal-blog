@@ -1,0 +1,96 @@
+body{
+	max-width: 47em;
+	margin: auto;
+	font-size: 12pt;
+	padding: 1em;
+	background-color: white;
+	color: #1f1f1f;
+    font-family: arial;
+    animation: 750ms slideFromBottom;
+}
+
+body.dark{
+    color: #b0b0b0;
+    background-color: #141414;
+}
+
+body.dark h1, body.dark h2, body.dark h3{
+    color: white;
+}
+
+body.dark p{
+    line-height: 26pt;
+}
+
+body.dark textarea{
+    background-color:#242424;
+    color: white;
+}
+
+p{
+	line-height: 22pt;
+}
+
+a{
+    color: #3464eb;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a:visited{
+	color: grey;
+}
+
+
+.article-title{
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.article{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.article-date{
+    font-size: 10pt;
+    margin-top: 10px;
+}
+
+.article-summary{
+    margin-top: 10px;
+    line-height: 22pt;
+}
+
+#RecentArticles{
+    animation: 1000ms slideFromBottom;
+}
+
+@keyframes slideFromBottom {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .spacing{
+      padding-top: 25px;
+  }
+
+textarea{
+    width: 100%;
+    background-color: #f0f0f0;
+    border: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 16pt;
+}
+
+li{
+    line-height: 22pt;
+}

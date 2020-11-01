@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+
+	<!-- development version of vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	</head>
+<body class="">
+
+<div id="slide-container"> 
+<h1>Blog Title</h1>
+
+<p>Hello Internet! I'm Eli and welcome to my blog. 
+During the day I work as a software developer for a mid-sized insurance company. I recently graduated college (yes, during the pandemic) 
+with a degree in computer science and math. I'm gonna be using this site to post things I find
+interesting. It might be math, coding, a new hobby,
+or internet challenge I'm trying. I have a wide range of interests so
+I'll be discussing many different things here, but above all I
+just like to learn new things and I want to share that
+process of learning and discovery with others.</p>
+
+<p> If you have any suggestions or topics you would like to see me discuss
+    <a href="mailto:elijah.tesch@gmail.com?subject=feedback">email me.</a>
+</p>
+
+<div class="spacing"> </div>
+
+
+<div id="RecentArticles">
+    <h1>Recent Articles</h1>
+        <div class="article" v-for="article in articles">
+            <a class="article-title" v-bind:href="article.link">{{ article.title }}</a>
+            <div class="article-summary">{{ article.summary }} ... </div>
+            <div class="article-date">{{ article.date }}</div>
+        </div>
+</div>
+
+</div>
+
+</body>
+
+<script>
+    var RecentArticles = new Vue({
+        el: '#RecentArticles',
+        data: {
+           articles: [
+               { title: "Hello World, I Made a Blog", 
+                summary: "I made a blog in under and hour using vue.js framework. Lets talk about how I did it and how I might improve it",
+                date: "Nov 1, 2020", 
+                link: "articles/initial-blog.html", 
+            },
+           ],
+        },
+    
+    })
+   
+   </script>
+</html>

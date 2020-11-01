@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <link rel="stylesheet" type="text/css" href="../css/main.css">
+    </head>
+<body class="">
+
+<h1>Hello World, I Made a Blog</h1>
+
+<div class="article-date">Nov 1, 2020</div>
+
+<p>
+    I recently decided to delve into the possibly antiquated world of internet blogging.
+    I'm always curious to learn new things and this seemed to be just outside my comfort zone.
+    I'm hoping to post regularily, at least once a week. I don't really have any expectations
+    for where this blog is going, but I have quite an eclectic list of ideas. More than anything
+    I'm hoping that it'll be good motivation to actually explore topics I'm interested in. 
+    While ideas and new skills are great, they are best when they are shared. But if my arm was bent, to list a goal I'd 
+    say 100 weekly readers and getting featured once on <a href="https://news.ycombinator.com/">Hacker News</a>.
+</p>
+
+<h2>Making the blog with Vue.js</h2>
+<p>
+    Vue.js is a pogressive web framework that has grown rapidly in popularity in the two short years it has existed.
+    Some even believe it'll 
+    <a href="https://medium.com/swlh/is-vue-js-going-to-take-over-react-in-2020-929c19806ac">overtake React </a>
+    which is currently the most popular web framework.  This is the first time I've 
+    worked with the Vue and I'd have to say I prefer over any other framework I've used. The templating syntax is very 
+    intuitive and powerful. Since I wanted to get this site up  fast I'm only using it very minimally right now but it'll be 
+     handy to have when I want to implement some improvements. I really can't overstate how
+    I wanted this site to be bare-bones to begin with and I'll improve on it over time as it grows. 
+</p>
+
+<textarea style="height: 40em;">
+
+    <div id="RecentArticles">
+        <h1>Recent Articles</h1>
+            <div class="article" v-for="article in articles">
+                <a class="article-title" v-bind:href="article.link">{{ article.title }}</a>
+                <div class="article-summary">{{ article.summary }} ... </div>
+                <div class="article-date">{{ article.date }}</div>
+            </div>
+    </div>
+    ...
+    var RecentArticles = new Vue({
+        el: '#RecentArticles',
+        data: {
+           articles: [
+               { title: "Blog post title", 
+                summary: "Lorem ipsum",
+                date: "Nov 1, 2020", 
+                link: "articles/foo.html", 
+            },
+           ],
+        },
+    
+    })
+</textarea>
+
+<p>
+    The template is linked by its DOM id to the corresponding Vue instance and the mustache sytax is used to bind the data to the template. 
+    The 'v-for' directive is used to loop through the articles. It isn't illustrated in this example but the framework is also reactive.
+    Which means if the data the view will also change. 
+</p>
+
+<h2>Future Improvements</h2>
+<p>
+    Right now adding to the blog means writing the HTML then adding the JSON to the data object in the Vue instance.
+    This is fine, but it'd be better to make a tool that automatically gets that information from the articles folder just by 
+    scraping the HTML. So in the future all I have to do is write the html of the article. Here are some other improvements
+</p>
+
+<ol>
+    <li>A header and footer template</li>
+    <li>Automatic reading time estimates for articles aka a word counter</li>
+    <li>Sorting of the articles list by date</li>
+    <li>A title for the blog, right now it is just "Blog Title"</li>
+    <li>A code block component with syntax highlighting</li>
+    <li>Dark mode (a must)</li>
+</ol>
+
+<p>
+    Other then those I'm also gonna be doing some research on how to market
+    blog sites, so you can probably expect a short article on what I find out from that. 
+    If you have any suggestions on how you I'd love to hear from you. Email me directly 
+    at elijah.tesch@gmail.com.
+</p>
+
+</body>
+</html>
